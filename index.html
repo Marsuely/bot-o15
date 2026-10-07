@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curiosidades sobre tecnologia</title>
+
+  <style>
+    body {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f0f5ff;
+      color: #222;
+    }
+
+    h1 {
+      color: #174ea6;
+    }
+
+    .mensagem {
+      padding: 15px;
+      background-color: white;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #174ea6;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0d3475;
+    }
+  </style>
+</head>
+<body>
+  <h1>Curiosidades sobre tecnologia</h1>
+
+  <p>
+    A tecnologia está presente em muitas atividades do nosso dia a dia,
+    como estudar, conversar, pesquisar e trabalhar.
+  </p>
+
+  <p class="mensagem">
+    Clique no botão para descobrir uma curiosidade sobre a história dos computadores.
+  </p>
+
+  <button class="botao">Mostrar curiosidade</button>
+
+  <script>
+    const botao = document.querySelector(".botao");
+    const mensagem = document.querySelector(".mensagem");
+
+    function mostrarMensagem() {
+      mensagem.textContent =
+        "O primeiro mouse de computador foi criado em 1964 por Douglas Engelbart. " +
+        "Ele era feito de madeira e tinha apenas um botão. Hoje, os mouses podem " +
+        "ter vários botões e usar sensores ópticos ou laser para detectar movimentos.";
+
+      mensagem.style.backgroundColor = "#d9ead3";
+    }
+
+    botao.addEventListener("click", mostrarMensagem);
+  </script>
+</body>
+</html>
