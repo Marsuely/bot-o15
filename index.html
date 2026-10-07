@@ -21,6 +21,7 @@
     }
 
     .mensagem {
+      min-height: 70px;
       padding: 15px;
       background-color: white;
       border-radius: 8px;
@@ -44,12 +45,12 @@
   <h1>Curiosidades sobre tecnologia</h1>
 
   <p>
-    A tecnologia está presente em muitas atividades do nosso dia a dia,
-    como estudar, conversar, pesquisar e trabalhar.
+    A tecnologia está presente no nosso dia a dia: usamos computadores e celulares
+    para estudar, trabalhar, conversar e descobrir novas informações.
   </p>
 
   <p class="mensagem">
-    Clique no botão para descobrir uma curiosidade sobre a história dos computadores.
+    Clique no botão para conhecer uma curiosidade!
   </p>
 
   <button class="botao">Mostrar curiosidade</button>
@@ -58,13 +59,27 @@
     const botao = document.querySelector(".botao");
     const mensagem = document.querySelector(".mensagem");
 
-    function mostrarMensagem() {
-      mensagem.textContent =
-        "O primeiro mouse de computador foi criado em 1964 por Douglas Engelbart. " +
-        "Ele era feito de madeira e tinha apenas um botão. Hoje, os mouses podem " +
-        "ter vários botões e usar sensores ópticos ou laser para detectar movimentos.";
+    const curiosidades = [
+      "O primeiro mouse de computador foi criado em 1964 e era feito de madeira.",
+      "O primeiro domínio registrado na internet foi symbolics.com, em 1985.",
+      "A palavra “robô” vem de uma palavra tcheca que significa “trabalho forçado”.",
+      "O e-mail foi criado antes da World Wide Web.",
+      "O primeiro celular portátil comercial foi lançado em 1983 e pesava cerca de 1 kg.",
+      "O código QR foi criado no Japão, em 1994, para acompanhar peças de automóveis.",
+      "Existem mais combinações possíveis em um jogo de xadrez do que átomos no universo observável."
+    ];
 
+    let indice = 0;
+
+    function mostrarMensagem() {
+      mensagem.textContent = curiosidades[indice];
       mensagem.style.backgroundColor = "#d9ead3";
+
+      indice++;
+
+      if (indice === curiosidades.length) {
+        indice = 0;
+      }
     }
 
     botao.addEventListener("click", mostrarMensagem);
